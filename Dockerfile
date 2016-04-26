@@ -20,7 +20,7 @@ RUN postconf -e virtual_uid_maps=static:5000 && \
     postconf -F '*/*/chroot = n'
 
 RUN echo "dovecot   unix  -       n       n       -       -       pipe"  >> /etc/postfix/master.cf && \
-    echo '    flags=DRhu user=vmail:vmail argv=/usr/lib/dovecot/deliver -d ${recipient}' >> /etc/postfix/master.cf
+    echo '    flags=DRhu user=vmail:vmail argv=/usr/libexec/dovecot/deliver -d ${recipient}' >> /etc/postfix/master.cf
 
 ADD start.sh /start.sh  
 
