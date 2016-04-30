@@ -1,4 +1,6 @@
 FROM alpine
+MAINTAINER Riad Vargas de Oliveira riad@leafhost.com.br
+
 RUN addgroup -S -g 5000 vmail
 RUN adduser -S -u 5000 -g vmail vmail
 RUN apk add --update postfix postfix-mysql acf-dovecot openssl dovecot-mysql rsyslog
